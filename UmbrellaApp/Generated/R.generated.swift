@@ -89,14 +89,25 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 5 storyboards.
   struct storyboard {
+    /// Storyboard `FortuneTelling`.
+    static let fortuneTelling = _R.storyboard.fortuneTelling()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Main`.
     static let main = _R.storyboard.main()
+    /// Storyboard `Menu`.
+    static let menu = _R.storyboard.menu()
     /// Storyboard `Top`.
     static let top = _R.storyboard.top()
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "FortuneTelling", bundle: ...)`
+    static func fortuneTelling(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.fortuneTelling)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
@@ -109,6 +120,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Main", bundle: ...)`
     static func main(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.main)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Menu", bundle: ...)`
+    static func menu(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.menu)
     }
     #endif
 
@@ -179,6 +197,26 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  struct nib {
+    /// Nib `PrefecturesDropDownView`.
+    static let prefecturesDropDownView = _R.nib._PrefecturesDropDownView()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "PrefecturesDropDownView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.prefecturesDropDownView) instead")
+    static func prefecturesDropDownView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.prefecturesDropDownView)
+    }
+    #endif
+
+    static func prefecturesDropDownView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.prefecturesDropDownView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    fileprivate init() {}
+  }
+
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
       try _R.validate()
@@ -200,8 +238,28 @@ struct _R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
+  struct nib {
+    struct _PrefecturesDropDownView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "PrefecturesDropDownView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+  #endif
+
+  #if os(iOS) || os(tvOS)
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
+      #if os(iOS) || os(tvOS)
+      try fortuneTelling.validate()
+      #endif
       #if os(iOS) || os(tvOS)
       try launchScreen.validate()
       #endif
@@ -209,9 +267,32 @@ struct _R: Rswift.Validatable {
       try main.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try menu.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try top.validate()
       #endif
     }
+
+    #if os(iOS) || os(tvOS)
+    struct fortuneTelling: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let fortuneTelling = StoryboardViewControllerResource<FortuneTellingViewController>(identifier: "FortuneTelling")
+      let name = "FortuneTelling"
+
+      func fortuneTelling(_: Void = ()) -> FortuneTellingViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: fortuneTelling)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.fortuneTelling().fortuneTelling() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'fortuneTelling' could not be loaded from storyboard 'FortuneTelling' as 'FortuneTellingViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
@@ -246,8 +327,28 @@ struct _R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    struct menu: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let menu = StoryboardViewControllerResource<MenuViewController>(identifier: "Menu")
+      let name = "Menu"
+
+      func menu(_: Void = ()) -> MenuViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: menu)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.menu().menu() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'menu' could not be loaded from storyboard 'Menu' as 'MenuViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     struct top: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = TopViewController
+      typealias InitialController = UIKit.UINavigationController
 
       let bundle = R.hostingBundle
       let name = "Top"

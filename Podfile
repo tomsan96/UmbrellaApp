@@ -12,6 +12,7 @@ target 'UmbrellaApp' do
   pod 'Moya'
   pod 'Moya/RxSwift'
   pod 'RxCocoa'
+  pod 'DropDown'
 
   target 'UmbrellaAppTests' do
     inherit! :search_paths
