@@ -6,31 +6,31 @@
 //
 
 import UIKit
+import RxSwift
 
 class MenuViewController: UIViewController, TransitionProtocol {
     @IBOutlet weak var prfecturesDropDown: PrefecturesDropDownView!
     @IBOutlet weak var fortuneTellingButton: UIButton!
-    @IBOutlet weak var openDropDownButton: UIButton!
-    
+
+    private let viewModel = MenuViewModel()
+    private let disposeBag = DisposeBag()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupViews()
+        bind()
     }
     private func setupViews() {
         // 占いボタンタップ時の処理を登録する
         self.fortuneTellingButton.addTarget(self, action: #selector(tapStartButton), for: .touchUpInside)
-        // ドロップダウンを開くボタンタップ時の処理を登録する
-        self.openDropDownButton.addTarget(self, action: #selector(showDropDown), for: .touchUpInside)
     }
-    
+
+    private func bind() {
+
+    }
+
+    // 占い画面に遷移する
     @objc private func tapStartButton() {
-        // 占い画面に遷移する
         self.transitionFortuneTelling()
-    }
-    
-    
-    @objc private func showDropDown() {
-        prfecturesDropDown.dropDown.show()
     }
 }

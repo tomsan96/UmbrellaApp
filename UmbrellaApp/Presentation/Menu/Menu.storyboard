@@ -21,56 +21,25 @@
                                 <state key="normal" title="Button"/>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mjf-fB-v4H" customClass="PrefecturesDropDownView" customModule="UmbrellaApp" customModuleProvider="target">
-                                <rect key="frame" x="52" y="236.5" width="310.5" height="25"/>
+                                <rect key="frame" x="52" y="211.5" width="310.5" height="25"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="7nl-OG-JwC"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jQg-S1-hte">
-                                <rect key="frame" x="52" y="211.5" width="310.5" height="25"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Icv-6Q-Lo9">
-                                        <rect key="frame" x="0.0" y="0.0" width="279" height="25"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4t-yB-ZHH">
-                                        <rect key="frame" x="279" y="0.0" width="31.5" height="25"/>
-                                        <state key="normal" title="▼"/>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="Icv-6Q-Lo9" firstAttribute="width" secondItem="jQg-S1-hte" secondAttribute="width" multiplier="0.9" id="2J7-qW-ncT"/>
-                                    <constraint firstItem="c4t-yB-ZHH" firstAttribute="width" secondItem="jQg-S1-hte" secondAttribute="width" multiplier="0.1" id="RVE-Iu-2tz"/>
-                                    <constraint firstAttribute="height" constant="25" id="SED-4k-5JN"/>
-                                    <constraint firstItem="c4t-yB-ZHH" firstAttribute="height" secondItem="jQg-S1-hte" secondAttribute="height" id="YXz-hq-XN2"/>
-                                    <constraint firstItem="c4t-yB-ZHH" firstAttribute="top" secondItem="jQg-S1-hte" secondAttribute="top" id="lc9-WR-HPk"/>
-                                    <constraint firstItem="Icv-6Q-Lo9" firstAttribute="height" secondItem="jQg-S1-hte" secondAttribute="height" id="p23-UM-Kzj"/>
-                                    <constraint firstItem="Icv-6Q-Lo9" firstAttribute="top" secondItem="jQg-S1-hte" secondAttribute="top" id="xIA-a0-8Mv"/>
-                                    <constraint firstAttribute="trailing" secondItem="c4t-yB-ZHH" secondAttribute="trailing" id="yzb-IT-5BO"/>
-                                    <constraint firstItem="Icv-6Q-Lo9" firstAttribute="leading" secondItem="jQg-S1-hte" secondAttribute="leading" id="zZO-yd-zyE"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8hc-LK-9Ha"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="jQg-S1-hte" firstAttribute="centerX" secondItem="6Ff-yZ-EMV" secondAttribute="centerX" id="0Pr-6j-n8N"/>
                             <constraint firstItem="Yz1-vm-QVM" firstAttribute="centerX" secondItem="6Ff-yZ-EMV" secondAttribute="centerX" id="IL2-hG-BPj"/>
-                            <constraint firstItem="jQg-S1-hte" firstAttribute="width" secondItem="6Ff-yZ-EMV" secondAttribute="width" multiplier="0.75" id="LEA-w4-0tF"/>
-                            <constraint firstItem="mjf-fB-v4H" firstAttribute="top" secondItem="jQg-S1-hte" secondAttribute="bottom" id="PGQ-Cf-dyS"/>
                             <constraint firstItem="mjf-fB-v4H" firstAttribute="width" secondItem="6Ff-yZ-EMV" secondAttribute="width" multiplier="0.75" id="PnQ-XZ-K3U"/>
                             <constraint firstItem="Yz1-vm-QVM" firstAttribute="centerY" secondItem="6Ff-yZ-EMV" secondAttribute="centerY" id="aNm-MZ-E5s"/>
-                            <constraint firstItem="jQg-S1-hte" firstAttribute="centerY" secondItem="6Ff-yZ-EMV" secondAttribute="centerY" multiplier="0.5" id="fU3-dU-ypa"/>
+                            <constraint firstItem="mjf-fB-v4H" firstAttribute="centerY" secondItem="6Ff-yZ-EMV" secondAttribute="centerY" multiplier="0.5" id="bCn-bu-aT0"/>
                             <constraint firstItem="mjf-fB-v4H" firstAttribute="centerX" secondItem="6Ff-yZ-EMV" secondAttribute="centerX" id="i7d-uy-FxA"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="fortuneTellingButton" destination="Yz1-vm-QVM" id="XMV-7p-3q3"/>
-                        <outlet property="openDropDownButton" destination="c4t-yB-ZHH" id="8Mx-vH-YvO"/>
                         <outlet property="prfecturesDropDown" destination="mjf-fB-v4H" id="wmW-F5-IVj"/>
                     </connections>
                 </viewController>
