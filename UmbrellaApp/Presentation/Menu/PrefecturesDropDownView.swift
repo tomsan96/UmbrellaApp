@@ -34,9 +34,6 @@ class PrefecturesDropDownView: BaseNibView {
         }
         dropDown.direction = .bottom
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
-            if prefecturesArray[index] == .hokkaido {
-                print("北海道たっぷしました")
-            }
             selectedPrefectureLabel.text = prefecturesArray[index].name
         }
         // ドロップダウンを開くボタンタップ時の処理を登録する
