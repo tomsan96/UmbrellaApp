@@ -18,19 +18,14 @@ class MenuViewController: UIViewController, TransitionProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        bind()
     }
     private func setupViews() {
         // 占いボタンタップ時の処理を登録する
         self.fortuneTellingButton.addTarget(self, action: #selector(tapStartButton), for: .touchUpInside)
     }
 
-    private func bind() {
-
-    }
-
     // 占い画面に遷移する
     @objc private func tapStartButton() {
-        self.transitionFortuneTelling()
+        transitionFortuneTelling(prefectureId: prfecturesDropDown.getPrefectureId())
     }
 }

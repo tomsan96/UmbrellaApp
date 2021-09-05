@@ -9,5 +9,12 @@ import UIKit
 import  RxSwift
 
 class FortuneTellingViewController: UIViewController {
-    
+    init?(coder: NSCoder, prefectureId: String) {
+        print(prefectureId)
+        super.init(coder: coder)
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
 }

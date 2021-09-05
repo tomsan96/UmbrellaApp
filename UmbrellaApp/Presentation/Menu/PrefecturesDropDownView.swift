@@ -15,6 +15,7 @@ class PrefecturesDropDownView: BaseNibView {
     @IBOutlet weak var openDropDownButton: UIButton!
 
     var prefecturesArray: [AppConst.JapanesePrefecture] = AppConst.JapanesePrefecture.all
+    var prefectureId: String = ""
 
     override init(frame: CGRect) {
         super .init(frame: frame)
@@ -35,6 +36,7 @@ class PrefecturesDropDownView: BaseNibView {
         dropDown.direction = .bottom
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             selectedPrefectureLabel.text = prefecturesArray[index].name
+            prefectureId = prefecturesArray[index].id
         }
         // ドロップダウンを開くボタンタップ時の処理を登録する
         openDropDownButton.addTarget(self, action: #selector(showDropDown), for: .touchUpInside)
@@ -44,5 +46,9 @@ class PrefecturesDropDownView: BaseNibView {
     // ドロップダウンを表示する
     @objc private func showDropDown() {
         dropDown.show()
+    }
+    
+    func getPrefectureId() -> String {
+        return prefectureId
     }
 }

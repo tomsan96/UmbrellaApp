@@ -10,7 +10,7 @@ import UIKit
 
 protocol TransitionProtocol: AnyObject {
     func transitionMenu()
-    func transitionFortuneTelling()
+    func transitionFortuneTelling(prefectureId: String)
 }
 
 extension TransitionProtocol where Self: UIViewController {
@@ -21,9 +21,9 @@ extension TransitionProtocol where Self: UIViewController {
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 
-    func transitionFortuneTelling() {
+    func transitionFortuneTelling(prefectureId: String) {
         let viewController = R.storyboard.fortuneTelling().instantiateViewController(identifier: R.storyboard.fortuneTelling.fortuneTelling.identifier) { coder in
-            FortuneTellingViewController(coder: coder)
+            FortuneTellingViewController(coder: coder, prefectureId: prefectureId)
         }
         self.navigationController?.pushViewController(viewController, animated: true)
     }

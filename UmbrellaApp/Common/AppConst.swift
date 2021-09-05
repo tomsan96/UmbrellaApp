@@ -141,6 +141,73 @@ class AppConst {
             }
         }
 
+        var id: String {
+            switch self {
+
+            // 北海道
+            case .hokkaido: return "016010"
+
+            // 東北
+            case .aomori   : return "020010"
+            case .iwate    : return "030010"
+            case .miyagi   : return "040010"
+            case .akita    : return "050010"
+            case .yamagata : return "060010"
+            case .fukushima: return "070010"
+
+            // 関東
+            case .ibaraki : return "080010"
+            case .tochigi : return "090010"
+            case .gunma   : return "100010"
+            case .saitama : return "110010"
+            case .chiba   : return "120010"
+            case .tokyo   : return "130010"
+            case .kanagawa: return "140010"
+
+            // 中部
+            case .niigata  : return "150010"
+            case .toyama   : return "160010"
+            case .ishikawa : return "170010"
+            case .fukui    : return "180010"
+            case .yamanashi: return "190010"
+            case .nagano   : return "200010"
+            case .gifu     : return "210010"
+            case .shizuoka : return "220010"
+            case .aichi    : return "230010"
+
+            // 関西
+            case .mie     : return "240010"
+            case .shiga   : return "250010"
+            case .kyoto   : return "260010"
+            case .osaka   : return "270000"
+            case .hyogo   : return "280010"
+            case .nara    : return "290010"
+            case .wakayama: return "300010"
+
+            // 中国
+            case .tottori  : return "310010"
+            case .shimane  : return "320010"
+            case .okayama  : return "330010"
+            case .hiroshima: return "340010"
+            case .yamaguchi: return "350010"
+
+            // 四国
+            case .tokushima: return "360010"
+            case .kagawa   : return "370000"
+            case .ehime    : return "380010"
+            case .kochi    : return "390010"
+
+            // 九州
+            case .fukuoka  : return "400010"
+            case .saga     : return "410010"
+            case .nagasaki : return "420010"
+            case .kumamoto : return "430010"
+            case .oita     : return "440010"
+            case .miyazaki : return "450010"
+            case .kagoshima: return "460010"
+            case .okinawa  : return "470010"
+            }
+        }
 
         static var all: [JapanesePrefecture] {
             return [
